@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<script src="resources/js/App.js"></script>
+<script src="resources/js/service/RegistrationService.js"></script>
+<script src="resources/js/controller/RegistrationController.js"></script>
+<script src="resources/js/service/ValidationService.js"></script>
+<script src="resources/js/controller/ValidationController.js"></script>
+
+
+<link rel="stylesheet" href="resources/css/index.css"/>
+
+<title>Pintar</title>
+</head>
+<body ng-app="PaintApp">
+	<div class="registration-option theme-color">
+		<div class="jumbotron text-center">
+			<h1 class="theme-title-font">Pintar</h1>
+			<p class="theme-content-font">Draw, Sell, Repeat</p>
+		</div>
+	
+		<div class="title theme-title-font">Register As</div>
+		<div class="row option theme-title-font">
+			<div class="col-2 col-sm col-md"></div>
+			<div class="col col-sm-10 col-md-8">
+			    <div class="row">
+					<div class="col-12 col-sm col-md">
+						<button class="btn btn-block">Painter</button>
+					</div>
+					<div class="col-12 col-sm-3 col-md-3" >or</div>
+					<div class="col-12 col-sm col-md">
+						<button class="btn btn-block">User</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-2 col-sm col-md"></div>
+		</div>
+		<div class="row container-fluid">
+			<div class="col-2"></div>
+			<div class="col-8 login-title theme-title-font">Already Registered ? <a href="#">Login</a></div>
+			<div class="col-2"></div>
+		</div>	
+	</div>
+	
+	<div class="registration-page theme-color-light">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-6 about-us">
+				<div class="jumbotron theme-content-font">
+					<div class="row">
+						<div class="col-12">
+							<h1 class="theme-title-font ml-auto">
+								Who are we ?
+							</h1>
+						</div>
+						<div class="col-12">
+							<p class="theme-content-font ml-auto">
+								<b>Pintar</b> is a platform for young emerging talents to expose their skills in field of art & designing to major population.  
+							</p>
+							<p class="theme-content-font ml-auto">
+								 At <b>Pintar</b>, you express your heart out in form of colors & pencil strokes and we help you get proper worth of it.
+							</p>
+							<p class="quote">
+								If you are Good at something, never do it for free
+							</p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 registration-form" ng-controller="ValidationController">
+				<div class="title theme-title-font">
+					Register
+				</div>
+				<div class="row">
+					<div class="col-2 col-sm-1 col-md-2"></div>
+					<div class="col-8 col-sm-10 col-md-8">
+						<form class="form" ng-controller="RegistrationController">
+											
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="material-icons">face</i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="Full Name" 
+									ng-model="userDetails.name"
+									ng-blur="validateName(userDetails.name)"/>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="material-icons">account_circle</i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="Username" ng-model="userDetails.userName"/>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="material-icons">phone</i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="Phone" ng-model="userDetails.contactDetails.phone"/>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="material-icons">email</i></span>
+								</div>
+								<input type="email" class="form-control" placeholder="E-Mail Address" ng-model="userDetails.contactDetails.email"/>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="material-icons">security</i></span>
+								</div>
+								<input type="password" class="form-control" placeholder="Password" ng-model="userDetails.password"/>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="material-icons">security</i></span>
+								</div>
+								<input type="password" class="form-control" placeholder="Re-enter Password" ng-model="userDetails.rPassword"/>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="material-icons">view_list</i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="" readonly ng-model="userDetails.userType"/>
+							</div>
+							<button class="btn btn-success btn-block" ng-click="register(userDetails)">Sign-Up</button>
+							<div class="tnc">By pressing "Sign-Up" you accept the<a href="#">terms and conditions</a>.</div>
+						</form>
+					</div>
+					<div class="col-2 col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+@charset "ISO-8859-1";
+
+ html,body{ margin:0; padding:0; min-height:100%; min-width:100%; overflow-x:hidden;}
+
+.bold {
+	font-weight: bold;
+	font-size: 25px;
+	color : #ffffff;
+}
+
+.theme-color {
+	background-color : #004D40 !important;
+}
+
+.theme-color-light {
+	background-color : #00695C !important;
+}
+
+.theme-title-font {
+	font-family: Garamond;
+}
+
+.theme-content-font {
+	font-family : Courier;
+}
+
+.registration-option {
+	text-align: center;
+	font-size: 25px;
+	color : #ffffff !important;
+	display : block !important;
+	width : 100% !important;
+	min-height: 100% !important;
+	position : absolute;	
+}
+
+.registration-option .jumbotron {
+	
+	color : #ffffff !important;
+	border-radius : 0px 0px 150% 150%;
+	background-color: #ffffff !important;
+}
+
+.registration-option .jumbotron h1 {
+	font-size: 100px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color : #004D40 !important;
+}
+
+.registration-option .jumbotron p {
+	font-size : 17px;
+	color : #004D40 !important;
+}
+
+.registration-option .title {
+	margin-top : 0px;
+	position : relative;	
+}
+
+.registration-option .option {
+	margin-top : 25px;
+	position : relative;	
+}
+
+.registration-option button {
+	padding : 30px 40px !important;
+	font-family: Courier;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #00796B !important;
+	color : #ffffff !important;
+	border : 0px;
+}
+
+.registration-option button:active {
+	background-color : #004D40 !important;
+	border : 0px;
+	outline : 0 !important;
+}
+
+
+.registration-option button:focus {
+	outline : 0 !important;
+}
+
+.registration-option .login-title {
+	margin-top : 25px;
+	font-size: 20px;
+}
+
+.registration-option .login-title a {
+	
+	text-decoration: none;
+	color : #ffffff !important;
+	
+}
+
+.registration-option .login-title a:hover {
+	
+	text-decoration: underline;
+	color : #ffffff !important;
+	
+}
+
+.registration-page {
+	display : block !important;
+	min-height : 100% !important;
+	width : 100% !important;
+	text-align: center;
+	top : 100%;
+	position: absolute;
+	min-height: 100%;
+}
+
+.registration-page .jumbotron {
+	background : transparent !important;
+	display : block; 
+	text-align: justify;
+}
+
+.registration-page .jumbotron h1{
+
+	color : #ffffff !important;
+	font-weight: bold;
+}
+
+.registration-page .jumbotron p{
+	font-size: 15px;
+	color : #ffffff !important;
+}
+
+.registration-page .jumbotron .quote {
+	font-size: 15px;
+}
+
+.quote:before {
+	content: open-quote;
+	font-size: 20px;
+}
+
+ .quote:after {
+	content: close-quote;
+	font-size: 20px;
+}
+.registration-form {
+	display : block;
+	position : relative;
+}
+
+.registration-form .title {
+	padding : 20px 0px;
+	color : #ffffff !important;
+	letter-spacing: 2px;
+	font-weight: bold;
+	font-size : 35px;
+	margin-left: 0px;
+}
+
+.registration-form .material-icons {
+	font-size: 25px;
+}
+
+.registration-form .input-group-prepend {
+	margin-top : 5px;
+	background-color: #ffffff !important;
+	border-radius : 15px;
+}
+
+.registration-form .input-group-text {
+	background-color : #ffffff !important;
+	border-radius : 10px;
+}
+
+.input-group {
+	background-color : transparent;	
+}
+
+
+.registration-form input, .registration-form input {
+	display : table-row;
+	padding : 5px 15px;
+	margin-top : 5px;
+	margin-bottom : 3px;	 
+}
+
+
+.registration-form button {
+	margin-top : 15px;
+	padding : 10px 15px !important;
+	font-family: Courier;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #004D40 !important;
+	color : #ffffff !important;
+	border : 0px;
+}
+
+.registration-form button:active {
+	background-color : #00796B !important;
+	border : 0px;
+	outline : 0 !important;
+}
+
+.registration-form .tnc ,.registration-form .tnc a{
+	padding : 10px;
+	color : #ffffff !important;
+	text-decoration: none;
+	font-size : 12px;
+}
+
+.registration-form .tnc a:hover {
+	text-decoration: underline;
+	font-weight: bolder;
+}
