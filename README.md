@@ -1,2 +1,0 @@
-# PintarRepo
-Pintar Repository
