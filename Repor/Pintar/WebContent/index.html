@@ -89,7 +89,9 @@
 											
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="material-icons">face</i></span>
+									<span class="input-group-text">
+										<i class="material-icons" ng-hide="nameValidated">face</i>
+										<i class="material-icons red" ng-show="nameValidated">error</i></span>
 								</div>
 								<input type="text" class="form-control" placeholder="Full Name" 
 									ng-model="userDetails.name"
@@ -97,33 +99,58 @@
 							</div>
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="material-icons">account_circle</i></span>
+									<span class="input-group-text">
+										<i class="material-icons"  ng-hide="userNameValidated">account_circle</i>
+										<i class="material-icons red"  ng-show="userNameValidated">error</i>
+									</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Username" ng-model="userDetails.userName"/>
+								<input type="text" class="form-control" placeholder="Username" 
+									ng-model="userDetails.userName"
+									ng-blur="validateUserName(userDetails.userName)"/>
 							</div>
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="material-icons">phone</i></span>
+									<span class="input-group-text">
+										<i class="material-icons" ng-hide="phoneValidated">phone</i>
+										<i class="material-icons red" ng-show="phoneValidated">error</i>
+									</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Phone" ng-model="userDetails.contactDetails.phone"/>
+								<input type="text" class="form-control" placeholder="Phone" 
+									ng-model="userDetails.contactDetails.phone"
+									ng-blur="validatePhone(userDetails.contactDetails.phone)"/>
 							</div>
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="material-icons">email</i></span>
+									<span class="input-group-text">
+										<i class="material-icons" ng-hide="emailValidated">email</i>
+										<i class="material-icons red" ng-show="emailValidated">error</i>
+									</span>
 								</div>
-								<input type="email" class="form-control" placeholder="E-Mail Address" ng-model="userDetails.contactDetails.email"/>
+								<input type="email" class="form-control" placeholder="E-Mail Address" 
+									ng-model="userDetails.contactDetails.email"
+									ng-blur="validateEmail(userDetails.contactDetails.email)"/>
 							</div>
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="material-icons">security</i></span>
+									<span class="input-group-text">
+										<i class="material-icons" ng-hide="passwordValidated">security</i>
+										<i class="material-icons red" ng-show="passwordValidated">error</i>
+									</span>
 								</div>
-								<input type="password" class="form-control" placeholder="Password" ng-model="userDetails.password"/>
+								<input type="password" class="form-control" placeholder="Password"
+									 ng-model="userDetails.password"
+									 ng-blur="validatePassword(userDetails.password)"/>
 							</div>
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="material-icons">security</i></span>
+									<span class="input-group-text">
+										<i class="material-icons" ng-hide="rPasswordValidated">security</i>
+										<i class="material-icons red" ng-show="rPasswordValidated">error</i>
+									</span>
 								</div>
-								<input type="password" class="form-control" placeholder="Re-enter Password" ng-model="userDetails.rPassword"/>
+								<input type="password" class="form-control" placeholder="Re-enter Password" 
+									ng-model="userDetails.rPassword"
+									ng-blur="validaterPassword(userDetails.rPassword, userDetails.password)"/>
 							</div>
 							<div class="input-group">
 								<div class="input-group-prepend">

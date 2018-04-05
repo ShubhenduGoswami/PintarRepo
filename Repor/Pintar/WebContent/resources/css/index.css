@@ -161,6 +161,12 @@
 	font-size: 25px;
 }
 
+.registration-form .material-icons + .red {
+	font-size: 25px;
+	color : red !important;
+}
+
+
 .registration-form .input-group-prepend {
 	margin-top : 5px;
 	background-color: #ffffff !important;
@@ -173,7 +179,8 @@
 }
 
 .input-group {
-	background-color : transparent;	
+	background-color : transparent;
+		
 }
 
 
