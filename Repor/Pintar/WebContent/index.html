@@ -25,36 +25,37 @@
 <title>Pintar</title>
 </head>
 <body ng-app="PaintApp">
-	<div class="registration-option theme-color">
-		<div class="jumbotron text-center">
-			<h1 class="theme-title-font">Pintar</h1>
-			<p class="theme-content-font">Draw, Sell, Repeat</p>
-		</div>
-	
-		<div class="title theme-title-font">Register As</div>
-		<div class="row option theme-title-font">
-			<div class="col-2 col-sm col-md"></div>
-			<div class="col col-sm-10 col-md-8">
-			    <div class="row">
-					<div class="col-12 col-sm col-md">
-						<button class="btn btn-block">Painter</button>
-					</div>
-					<div class="col-12 col-sm-3 col-md-3" >or</div>
-					<div class="col-12 col-sm col-md">
-						<button class="btn btn-block">User</button>
+	<div ng-controller="RegistrationController">
+		<div class="registration-option theme-color">
+			<div class="jumbotron text-center">
+				<h1 class="theme-title-font">Pintar</h1>
+				<p class="theme-content-font">Draw, Sell, Repeat</p>
+			</div>
+		
+			<div class="title theme-title-font">Register As</div>
+			<div class="row option theme-title-font">
+				<div class="col-2 col-sm col-md"></div>
+				<div class="col col-sm-10 col-md-8">
+				    <div class="row">
+						<div class="col-12 col-sm col-md">
+							<button class="btn btn-block">Painter</button>
+						</div>
+						<div class="col-12 col-sm-3 col-md-3" >or</div>
+						<div class="col-12 col-sm col-md">
+							<button class="btn btn-block">User</button>
+						</div>
 					</div>
 				</div>
+				<div class="col-2 col-sm col-md"></div>
 			</div>
-			<div class="col-2 col-sm col-md"></div>
+			<div class="row container-fluid">
+				<div class="col-2"></div>
+				<div class="col-8 login-title theme-title-font">Already Registered ? <a href="#">Login</a></div>
+				<div class="col-2"></div>
+			</div>	
 		</div>
-		<div class="row container-fluid">
-			<div class="col-2"></div>
-			<div class="col-8 login-title theme-title-font">Already Registered ? <a href="#">Login</a></div>
-			<div class="col-2"></div>
-		</div>	
-	</div>
-	
-	<div class="registration-page theme-color-light">
+		
+		<div class="registration-page theme-color-light">
 		<div class="row">
 			<div class="col-12 col-sm-12 col-md-6 about-us">
 				<div class="jumbotron theme-content-font">
@@ -78,20 +79,20 @@
 					</div>	
 				</div>
 			</div>
-			<div class="col-12 col-sm-12 col-md-6 registration-form" ng-controller="ValidationController">
+			<div class="col-12 col-sm-12 col-md-6 registration-form">
 				<div class="title theme-title-font">
 					Register
 				</div>
 				<div class="row">
 					<div class="col-2 col-sm-1 col-md-2"></div>
 					<div class="col-8 col-sm-10 col-md-8">
-						<form class="form" ng-controller="RegistrationController">
+						<form class="form">
 											
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">
-										<i class="material-icons" ng-hide="nameValidated">face</i>
-										<i class="material-icons red" ng-show="nameValidated">error</i></span>
+										<i class="material-icons" ng-hide="validation.nameValidated">face</i>
+										<i class="material-icons red" ng-show="validation.nameValidated">error</i></span>
 								</div>
 								<input type="text" class="form-control" placeholder="Full Name" 
 									ng-model="userDetails.name"
@@ -100,8 +101,8 @@
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">
-										<i class="material-icons"  ng-hide="userNameValidated">account_circle</i>
-										<i class="material-icons red"  ng-show="userNameValidated">error</i>
+										<i class="material-icons"  ng-hide="validation.userNameValidated">account_circle</i>
+										<i class="material-icons red"  ng-show="validation.userNameValidated">error</i>
 									</span>
 								</div>
 								<input type="text" class="form-control" placeholder="Username" 
@@ -111,8 +112,8 @@
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">
-										<i class="material-icons" ng-hide="phoneValidated">phone</i>
-										<i class="material-icons red" ng-show="phoneValidated">error</i>
+										<i class="material-icons" ng-hide="validation.phoneValidated">phone</i>
+										<i class="material-icons red" ng-show="validation.phoneValidated">error</i>
 									</span>
 								</div>
 								<input type="text" class="form-control" placeholder="Phone" 
@@ -122,8 +123,8 @@
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">
-										<i class="material-icons" ng-hide="emailValidated">email</i>
-										<i class="material-icons red" ng-show="emailValidated">error</i>
+										<i class="material-icons" ng-hide="validation.emailValidated">email</i>
+										<i class="material-icons red" ng-show="validation.emailValidated">error</i>
 									</span>
 								</div>
 								<input type="email" class="form-control" placeholder="E-Mail Address" 
@@ -133,8 +134,8 @@
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">
-										<i class="material-icons" ng-hide="passwordValidated">security</i>
-										<i class="material-icons red" ng-show="passwordValidated">error</i>
+										<i class="material-icons" ng-hide="validation.passwordValidated">security</i>
+										<i class="material-icons red" ng-show="validation.passwordValidated">error</i>
 									</span>
 								</div>
 								<input type="password" class="form-control" placeholder="Password"
@@ -144,8 +145,8 @@
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">
-										<i class="material-icons" ng-hide="rPasswordValidated">security</i>
-										<i class="material-icons red" ng-show="rPasswordValidated">error</i>
+										<i class="material-icons" ng-hide="validation.rPasswordValidated">security</i>
+										<i class="material-icons red" ng-show="validation.rPasswordValidated">error</i>
 									</span>
 								</div>
 								<input type="password" class="form-control" placeholder="Re-enter Password" 
@@ -158,7 +159,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="" readonly ng-model="userDetails.userType"/>
 							</div>
-							<button class="btn btn-success btn-block" ng-click="register(userDetails)">Sign-Up</button>
+							<button class="btn btn-success btn-block" ng-click="register()">Sign-Up</button>
 							<div class="tnc">By pressing "Sign-Up" you accept the<a href="#">terms and conditions</a>.</div>
 						</form>
 					</div>
@@ -166,6 +167,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
