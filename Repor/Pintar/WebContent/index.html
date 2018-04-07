@@ -11,13 +11,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Jua|Tajawal|Nunito|Comfortaa" rel="stylesheet">
 
 <script src="resources/js/App.js"></script>
 <script src="resources/js/service/RegistrationService.js"></script>
-<script src="resources/js/controller/RegistrationController.js"></script>
 <script src="resources/js/service/ValidationService.js"></script>
-<script src="resources/js/controller/ValidationController.js"></script>
+<script src="resources/js/service/AnimationService.js"></script>
+<script src="resources/js/controller/RegistrationController.js"></script>
 
 
 <link rel="stylesheet" href="resources/css/index.css"/>
@@ -38,11 +38,11 @@
 				<div class="col col-sm-10 col-md-8">
 				    <div class="row">
 						<div class="col-12 col-sm col-md">
-							<button class="btn btn-block">Painter</button>
+							<button class="btn btn-block" ng-click="setUserTypeArtist()">Artist</button>
 						</div>
 						<div class="col-12 col-sm-3 col-md-3" >or</div>
 						<div class="col-12 col-sm col-md">
-							<button class="btn btn-block">User</button>
+							<button class="btn btn-block" ng-click="setUserTypeRegular()">Regular</button>
 						</div>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 			</div>	
 		</div>
 		
-		<div class="registration-page theme-color-light">
+		<div class="registration-page theme-color-light theme-text-color">
 		<div class="row">
 			<div class="col-12 col-sm-12 col-md-6 about-us">
 				<div class="jumbotron theme-content-font">
@@ -67,19 +67,33 @@
 						</div>
 						<div class="col-12">
 							<p class="theme-content-font ml-auto">
-								<b>Pintar</b> is a platform for young emerging talents to expose their skills in field of art & designing to major population.  
+								At <b>Pintar</b>, we aim to provide proper appreciation and applaud for the art enthusiasts all around the world. You express your heart out in form of colors & pencil strokes and we help you get proper worth of it.  
 							</p>
+						</div>
+						
+						<div class="col-12">
+							<h1 class="theme-title-font ml-auto">
+								As an Artist...
+							</h1>
 							<p class="theme-content-font ml-auto">
-								 At <b>Pintar</b>, you express your heart out in form of colors & pencil strokes and we help you get proper worth of it.
+								You can feature your artwork in your own online collection.<br/>
+								Take contracts from interested people.<br/>
+								Sell you art at profit.
 							</p>
-							<p class="quote">
-								If you are Good at something, never do it for free
+						</div>
+						<div class="col-12">
+							<h1 class="theme-title-font ml-auto">
+								As a Customer...
+							</h1>
+							<p class="theme-content-font ml-auto">
+								Look at different artworks.<br/>
+								Order a beautiful piece of art for your loved one and get it delivered.
 							</p>
 						</div>
 					</div>	
 				</div>
 			</div>
-			<div class="col-12 col-sm-12 col-md-6 registration-form">
+			<div class="col-12 col-sm-12 col-md-6 registration-form" id="registrationform">
 				<div class="title theme-title-font">
 					Register
 				</div>
@@ -159,7 +173,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="" readonly ng-model="userDetails.userType"/>
 							</div>
-							<button class="btn btn-success btn-block" ng-click="register()">Sign-Up</button>
+							<button class="btn btn-default btn-block" ng-click="register()" ng-disabled="validation.registerDisable">Sign-Up</button>
 							<div class="tnc">By pressing "Sign-Up" you accept the<a href="#">terms and conditions</a>.</div>
 						</form>
 					</div>

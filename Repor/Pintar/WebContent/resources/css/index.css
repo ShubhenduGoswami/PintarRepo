@@ -8,20 +8,26 @@
 	color : #ffffff;
 }
 
+.theme-text-color {
+	color : #ffffff !important;
+}
+
 .theme-color {
 	background-color : #004D40 !important;
 }
 
 .theme-color-light {
-	background-color : #00695C !important;
+	background-color : #ffffff !important;
 }
 
 .theme-title-font {
-	font-family: Garamond;
+	font-family: 'Comfortaa', sans-serif;
 }
 
 .theme-content-font {
-	font-family : Courier;
+	font-family : 'Tajawal', sans-serif;
+	letter-spacing: 0px;
+	font-size: 20px !important;
 }
 
 .registration-option {
@@ -31,7 +37,8 @@
 	display : block !important;
 	width : 100% !important;
 	min-height: 100% !important;
-	position : absolute;	
+	position : absolute;
+	background-image: url("images/background-reg.jpg");	
 }
 
 .registration-option .jumbotron {
@@ -65,16 +72,16 @@
 
 .registration-option button {
 	padding : 30px 40px !important;
-	font-family: Courier;
+	font-family: 'Tajawal', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
-	background-color: #00796B !important;
+	background-color: #304FFE !important;
 	color : #ffffff !important;
 	border : 0px;
 }
 
 .registration-option button:active {
-	background-color : #004D40 !important;
+	background-color : #2196f3 !important;
 	border : 0px;
 	outline : 0 !important;
 }
@@ -111,6 +118,7 @@
 	top : 100%;
 	position: absolute;
 	min-height: 100%;
+	background-image: url("images/background-reg.jpg") !important;
 }
 
 .registration-page .jumbotron {
@@ -121,31 +129,23 @@
 
 .registration-page .jumbotron h1{
 
-	color : #ffffff !important;
+	/* color : #ffffff !important; */
 	font-weight: bold;
 }
 
 .registration-page .jumbotron p{
 	font-size: 15px;
-	color : #ffffff !important;
+	/* color : #ffffff !important; */
 }
 
 .registration-page .jumbotron .quote {
 	font-size: 15px;
 }
 
-.quote:before {
-	content: open-quote;
-	font-size: 20px;
-}
-
- .quote:after {
-	content: close-quote;
-	font-size: 20px;
-}
 .registration-form {
 	display : block;
 	position : relative;
+	margin-top : 30px;
 }
 
 .registration-form .title {
@@ -195,16 +195,24 @@
 .registration-form button {
 	margin-top : 15px;
 	padding : 10px 15px !important;
-	font-family: Courier;
+	font-family: 'Tajawal', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
-	background-color: #004D40 !important;
+	/* background-color: #2962FF !important; */
+	background-color : #304FFE !important;
 	color : #ffffff !important;
 	border : 0px;
 }
 
 .registration-form button:active {
-	background-color : #00796B !important;
+	/* background-color : #448AFF !important; */
+	background-color : #2196f3 !important;
+	border : 0px;
+	outline : 0 !important;
+}
+
+.registration-form button:disabled {
+	background-color : #343443 !important;
 	border : 0px;
 	outline : 0 !important;
 }
